@@ -70,7 +70,7 @@ void Game::ComposeFrame()
 	Vei2 p = { mouse.GetMouseX(),mouse.GetMouseY() };
 	Color c = { alpha,GREEN };
 
-	gfx.sysBuffer.Copy( flare );
+	gfx.sysBuffer.Copy( bees );
 
 	ft.StartFrame();
 	ft.StopFrame( logFile );
