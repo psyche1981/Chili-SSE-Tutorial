@@ -144,9 +144,9 @@ int WINAPI wWinMain( HINSTANCE hInst,HINSTANCE,LPWSTR,INT )
     RegisterClassEx( &wc );
 	
 	RECT wr;
-	wr.left = 650;
+	wr.left = 150;
 	wr.right = D3DGraphics::screenWidth + wr.left;
-	wr.top = 150;
+	wr.top = 50;
 	wr.bottom = D3DGraphics::screenHeight + wr.top;
 	AdjustWindowRect( &wr,WS_CAPTION | WS_MINIMIZEBOX | WS_SYSMENU,FALSE );
     HWND hWnd = CreateWindowW( L"Chili DirectX Framework Window",L"Chili DirectX Framework",
