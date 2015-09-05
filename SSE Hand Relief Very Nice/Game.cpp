@@ -73,5 +73,6 @@ void Game::ComposeFrame()
 	gfx.sysBuffer.Copy( bees );
 
 	ft.StartFrame();
+	gfx.sysBuffer.Clear();
 	ft.StopFrame( logFile );
 }

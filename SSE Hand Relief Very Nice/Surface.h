@@ -21,7 +21,9 @@ public:
 		height( height ),
 		pixelPitch( CalculatePixelPitch( width,byteAlignment ) )
 	{
-		buffer = new Color[height * pixelPitch];
+		///new call does not guarantee a 16-byte aligned address in memory
+		//buffer = new Color[height * pixelPitch];
+		buffer = (Color*)_aligned_malloc(sizeof(Color) * height * pixelPitch, 16);
 	}
 	Surface( Surface&& source )
 		:
@@ -56,7 +58,7 @@ public:
 	{
 		if( buffer != nullptr )
 		{
-			delete[] buffer;
+			_aligned_free(buffer);
 			buffer = nullptr;
 		}
 	}
